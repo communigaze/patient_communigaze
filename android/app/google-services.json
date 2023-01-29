@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "870029865532",
+    "project_id": "communigaze-a1419",
+    "storage_bucket": "communigaze-a1419.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870029865532:android:95f2b82444c0d9a7a3c939",
+        "android_client_info": {
+          "package_name": "com.example.communigaze"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870029865532-0uo6ml13js0geuuv3rejp6k8vnvf3duu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD97BzGYM8-iKKrEszRe9mvFpY_vRpfGww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870029865532-0uo6ml13js0geuuv3rejp6k8vnvf3duu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870029865532:android:98710fc220ae989ca3c939",
+        "android_client_info": {
+          "package_name": "com.example.patient_communigaze"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870029865532-0uo6ml13js0geuuv3rejp6k8vnvf3duu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD97BzGYM8-iKKrEszRe9mvFpY_vRpfGww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870029865532-0uo6ml13js0geuuv3rejp6k8vnvf3duu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
