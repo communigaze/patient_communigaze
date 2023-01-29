@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'push_notification.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,9 +17,6 @@ void main() async {
       ),
     ),
   );
-  //generate the token
-  PushNotificationSystem pushNotification = PushNotificationSystem();
-  pushNotification.generateAndGetToken();
 }
 
 class MyApp extends StatefulWidget {

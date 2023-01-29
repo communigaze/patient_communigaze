@@ -7,6 +7,7 @@ import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'glassmorphism_card.dart';
 import 'right_glassmorphism_card.dart';
 import 'main_screen.dart';
+import 'push_notification.dart';
 
 //TODO: emergency button and the message to be sent to the guardian
 GlassmorphismCard MessageCard = GlassmorphismCard(
@@ -39,11 +40,12 @@ class _CardDetailsScreenState extends State<CardDetailsScreen> {
   ValueNotifier<String> _eyeStatusNotifier = ValueNotifier<String>("");
   String _eyeStatus = "";
   FlutterTts flutterTts = FlutterTts();
-
+  late PushNotificationSystem pushNotification;
   @override
   void initState() {
     super.initState();
     _appBar = CameraAppBar(cameras: widget.cameras);
+    pushNotification = PushNotificationSystem(card: widget.mycard);
     _eyeStatusNotifier = _appBar.eyeStatusNotifier;
     flutterTts = FlutterTts();
     _eyeStatusNotifier.addListener(_onEyeStatusChanged);
@@ -123,6 +125,7 @@ class _CardDetailsScreenState extends State<CardDetailsScreen> {
 
   Widget _buildActions(String eyeStatus) {
     if (eyeStatus == 'Left Eye Closed') {
+      pushNotification.getGuardianToken();
       Fluttertoast.showToast(
         msg: "sent the message",
         gravity: ToastGravity.CENTER,

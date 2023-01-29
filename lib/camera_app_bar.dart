@@ -3,7 +3,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 
-// TODO: make the initialize camera function accesible to the main.dart file
 // TODO: understand how the camera feed is being displayed
 class CameraAppBar extends StatefulWidget with PreferredSizeWidget {
   final List<CameraDescription> cameras;
