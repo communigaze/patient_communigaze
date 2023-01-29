@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'camera_app_bar.dart';
 import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'glassmorphism_card.dart';
 import 'card_details_screen.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 // Declare the global variables
 String? previousEyeValue;
@@ -57,7 +59,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   //ValueNotifier for eyes status
   late CameraAppBar _appBar;
-
+  int countBothEyesClosed = 0;
   @override
   void initState() {
     super.initState();
@@ -83,13 +85,28 @@ class _MainScreenState extends State<MainScreen> {
                     child: ValueListenableBuilder(
                       valueListenable: _appBar.eyeStatusNotifier,
                       builder: (context, value, child) {
+                        if (previousEyeValue == 'Eyes Opened') {
+                          if (value == "Both Eyes Closed") {
+                            countBothEyesClosed++;
+                          }
+                        }
                         if (previousEyeValue != value) {
                           previousEyeValue = value;
                           if (value == "Both Eyes Closed") {
                             toggleEyeCard = !toggleEyeCard;
                           }
                         }
-
+                        //if the countBothEyesClosed is equals to 2
+                        //make the device ring
+                        if (countBothEyesClosed == 2) {
+                          final player = AudioCache();
+                          player.play('emergency_siren.wav');
+                          Fluttertoast.showToast(
+                            msg: "Emergency is triggered",
+                            gravity: ToastGravity.CENTER,
+                          );
+                          countBothEyesClosed = 0;
+                        }
                         //navigate to card details screen
                         if (value == "Left Eye Closed") {
                           SelectedCard = toggleEyeCard ? ToiletCard : EatCard;

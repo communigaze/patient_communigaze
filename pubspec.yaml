@@ -47,6 +47,8 @@ dependencies:
   fluttertoast: ^8.1.2
   http: ^0.13.5
 
+  audioplayers: ^0.20.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,6 +84,7 @@ flutter:
     - assets/images/emergency.png
     - assets/images/speak.png
     - assets/images/eyes.png
+    - assets/emergency_siren.wav
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -36,7 +36,7 @@ class PushNotificationSystem {
 
     // Send the FCM notification to the Guardian's device
     http.Response response = await client.post(
-        Uri.parse("https://fcm.googleapis.com/fcm/send"),
+        Uri.parse("https://fcm.googleapis.com/Qfcm/send"),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "key=$serverKey"
