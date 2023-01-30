@@ -6,6 +6,7 @@ import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'glassmorphism_card.dart';
 import 'card_details_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'send_message.dart';
 
 // Declare the global variables
 String? previousEyeValue;
@@ -99,6 +100,9 @@ class _MainScreenState extends State<MainScreen> {
                         //if the countBothEyesClosed is equals to 2
                         //make the device ring
                         if (countBothEyesClosed == 2) {
+                          SendMessage sendNow =
+                              SendMessage(content: "Urgent!! I need help now");
+                          sendNow.sendTextMessage();
                           final player = AudioCache();
                           player.play('emergency_siren.wav');
                           Fluttertoast.showToast(

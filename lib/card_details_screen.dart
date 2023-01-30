@@ -8,6 +8,7 @@ import 'glassmorphism_card.dart';
 import 'right_glassmorphism_card.dart';
 import 'main_screen.dart';
 import 'push_notification.dart';
+import 'send_message.dart';
 
 //TODO: emergency button and the message to be sent to the guardian
 GlassmorphismCard MessageCard = GlassmorphismCard(
@@ -126,6 +127,8 @@ class _CardDetailsScreenState extends State<CardDetailsScreen> {
   Widget _buildActions(String eyeStatus) {
     if (eyeStatus == 'Left Eye Closed') {
       pushNotification.getGuardianToken();
+      SendMessage sendNow = SendMessage(content: widget.mycard.content);
+      sendNow.sendTextMessage();
       Fluttertoast.showToast(
         msg: "sent the message",
         gravity: ToastGravity.CENTER,
