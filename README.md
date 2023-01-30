@@ -1,16 +1,37 @@
 # patient_communigaze
 
-A new Flutter project.
+This app allowed the Persons with Physical and Speech Disabilities to commmunicate with their guardian using **eyes blinking**
 
-## Getting Started
+## How to use this application
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### How to run this application
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```command
+git clone https://github.com/communigaze/patient_communigaze.git
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Main page
+
+The user can choose the message that he/she wants to tell his/her guardian by using eyes blinking.
+
+- Left Eye blinking -> choose left card message.
+- Right Eye blinking -> choose the right card message.
+- Both Eyes blinking -> switch to the new sets of card.
+
+After they choose the card, they will be navigated to message detail page.
+
+### Message detail page
+
+The user can choose either he/she wants to read out the text or send the text to the guardian by using **eyes blinking** as well.
+
+- Left Eye blinking -> choose to send the message to guardian
+- Right Eye blinking -> choose to read out the message
+- Both Eyes blinking -> Back to Main Page
+
+### Emergency function
+
+Whenever the user faces any emergency situation, the user can **blinking both eyes twice continuously** at **main page** to trigger the emergency function.
+
+The emergency function will send emergency message to the user and the app will ring for around 10 seconds to alert the people surroundings
